@@ -14,16 +14,15 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+  
+  body {
+    @apply text-white;
+  }
 }
 
 body {
+  @apply bg-gradient-to-tr from-purple-400 to-purple-900;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
