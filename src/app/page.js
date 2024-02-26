@@ -50,7 +50,7 @@ export default function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://saga.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
             target="_blank"
             rel="noopener noreferrer"
@@ -71,7 +71,7 @@ export default function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://evmos.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -92,7 +92,7 @@ export default function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://polygon.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -115,7 +115,7 @@ export default function Home() {
 
         <div className="mb-32 p-2 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
           <a
-            href="#"
+            href="https://near.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -136,7 +136,7 @@ export default function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://arbitrum.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
             target="_blank"
             rel="noopener noreferrer"
@@ -157,7 +157,7 @@ export default function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://optimism.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -178,7 +178,7 @@ export default function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://ethereum.flippando.xyz"
             className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
