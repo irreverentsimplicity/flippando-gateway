@@ -1,5 +1,6 @@
 import {Text} from "@chakra-ui/react";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,12 +29,8 @@ export default function Home() {
 
       <div className="lg:max-w-5xl lg:w-full lg:mb-0">
         <div className="mb-32 p-2 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-          <a
-            href="https://gno.flippando.xyz"
-            className="group rounded-lg border bg-purple-800 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+         <Link legacyBehavior href="https://gno.flippando.xyz">
+           <a className="group rounded-lg border bg-purple-800 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
             <h2 className={`mb-3 text-2xl font-bold`}>
               Gno{" "}
             </h2>
@@ -46,15 +43,11 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="checkmark">✅</span> public beta
             </p>
+            </a>
+          </Link>
 
-          </a>
-
-          <a
-            href="https://saga.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link legacyBehavior href="https://saga.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Saga{" "}
             </h2>
@@ -67,8 +60,8 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
-          </a>
+            </a>
+          </Link>
 
           <a
             href="https://evmos.flippando.xyz"
