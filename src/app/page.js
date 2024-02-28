@@ -63,12 +63,8 @@ export default function Home() {
             </a>
           </Link>
 
-          <a
-            href="https://evmos.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link legacyBehavior href="https://evmos.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Evmos{" "}
             </h2>
@@ -81,15 +77,10 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
           </a>
-
-          <a
-            href="https://polygon.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Link>
+          <Link legacyBehavior href="https://polygon.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Polygon{" "}
             </h2>
@@ -102,17 +93,13 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
           </a>
+          </Link>
         </div>
 
         <div className="mb-32 p-2 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-          <a
-            href="https://near.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <Link legacyBehavior href="https://near.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-bold`}>
               NEAR / Aurora{" "}
             </h2>
@@ -125,15 +112,11 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
           </a>
+          </Link>
 
-          <a
-            href="https://arbitrum.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link legacyBehavior href="https://arbitrum.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Arbitrum{" "}
             </h2>
@@ -146,15 +129,11 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
           </a>
+          </Link>
 
-          <a
-            href="https://optimism.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link legacyBehavior href="https://optimism.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Optimism{" "}
             </h2>
@@ -167,15 +146,11 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
           </a>
+          </Link>
 
-          <a
-            href="https://ethereum.flippando.xyz"
-            className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link legacyBehavior href="https://ethereum.flippando.xyz">
+          <a className="group rounded-lg border bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:bg-purple-400 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Ethereum{" "}
             </h2>
@@ -188,8 +163,8 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-sm`}>
               <b>Access:</b> <span role="img" aria-label="locked">🔒</span> closed beta
             </p>
-
           </a>
+          </Link>
         </div>
       </div>
       <Footer/>
