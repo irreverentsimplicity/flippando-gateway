@@ -10,18 +10,23 @@ export default function Home() {
           Flippando
         </h1>
       </div>
+      <div className="flex flex-1 items-start justify-center">
+        <h3 className="text-[2vw] font-italic leading-none text-center text-shadow-lg">
+          Estoy flippando en colores
+        </h3>
+      </div>
 
       {/* Cards container */}
       <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-4 gap-4 justify-items-stretch content-start">
         {/* Card Links */}
         {createLinkCard("https://gno.flippando.xyz", "Gno", "GNOVM", "✅ deployed", "🧪 testnet", "✅ gno.flippando.xyz", "✅ public beta")}
-        {createLinkCard("https://saga.flippando.xyz", "Saga", "EVM", "✅ deployed", "✅ mainnet", "🔒 not deployed", "🧪 internal testing")}
-        {createLinkCard("https://evmos.flippando.xyz", "Evmos", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
-        {createLinkCard("https://polygon.flippando.xyz", "Polygon", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
-        {createLinkCard("https://near.flippando.xyz", "NEAR / Aurora", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
-        {createLinkCard("https://arbitrum.flippando.xyz", "Arbitrum", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
-        {createLinkCard("https://optimism.flippando.xyz", "Optimism", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
-        {createLinkCard("https://ethereum.flippando.xyz", "Ethereum", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Saga", "EVM", "✅ deployed", "✅ mainnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Evmos", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Polygon", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "NEAR / Aurora", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Arbitrum", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Optimism", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Ethereum", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
       </div>
 
       <Footer />
@@ -34,9 +39,9 @@ function createLinkCard(url, title, engine, status, network, frontendStatus, acc
   const determineClass = (url) => {
     
     if (url.includes('gno')) {
-        return 'bg-green-900 hover:bg-green-600';
+        return 'bg-purple-500 hover:bg-gray-700';
     } else {
-        return 'bg-purple-800 hover:bg-purple-400';
+        return 'bg-purple-900 hover:bg-gray-700';
     }
 };
 
