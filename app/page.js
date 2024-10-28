@@ -3,21 +3,21 @@ import './globals.css';
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between bg-gradient-to-tr from-purple-500 to-purple-900 text-white p-10">
+    <main className="flex flex-1 flex-col items-center justify-between bg-gradient-to-tr from-purple-500 to-purple-900 text-white p-5">
       {/* Title */}
       <div className="flex flex-1 items-start justify-center">
-        <h1 className="text-[8vw] font-semibold leading-none text-center text-shadow-lg">
+        <h1 className="text-[8vw] font-semibold leading-none text-center text-shadow-lg pb-4 pt-4">
           Flippando
         </h1>
       </div>
       <div className="flex flex-1 items-start justify-center">
-        <h3 className="text-[2vw] font-italic leading-none text-center text-shadow-lg">
+        <h3 className="text-[2vw] font-italic leading-none text-center text-shadow-md pb-10">
           Estoy flippando en colores
         </h3>
       </div>
 
       {/* Cards container */}
-      <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-4 gap-4 justify-items-stretch content-start">
+      <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-4 gap-3 justify-items-stretch content-start mt-4">
         {/* Card Links */}
         {createLinkCard("https://gno.flippando.xyz", "Gno", "GNOVM", "✅ deployed", "🧪 testnet", "✅ gno.flippando.xyz", "✅ public beta")}
         {createLinkCard("#", "Saga", "EVM", "✅ deployed", "✅ mainnet", "🔒 not deployed", "🧪 internal testing")}
