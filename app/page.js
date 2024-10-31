@@ -1,4 +1,5 @@
 import Footer from "./components/Footer";
+import GameMechanics from "./components/GameMechanics";
 import './globals.css';
 
 export default function Home() {
@@ -11,11 +12,21 @@ export default function Home() {
         </h1>
       </div>
       <div className="flex flex-1 items-start justify-center">
-        <h3 className="text-[1.5vw] font-italic leading-none text-center text-shadow-md pb-10">
+        <h3 className="text-[1.5vw] font-italic leading-none text-center text-shadow-md pb-10 mb-10">
           Estoy flippando en colores
         </h3>
       </div>
+      
+      {/* Game mechanics */}
+      <GameMechanics/>
 
+      <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-20 pt-10">
+                Live Dashboard
+      </div>
+      <div className="text-lg font-italic text-center text-shadow-sm mt-10 mb-10 mr-40 ml-40">
+            Flippando is a "user first, chain later" project. We built the same game, with the same features, on top of different VMs. And then deployed on a variety of blockchains.
+            It's up to the user to decide which chain they want to play their favorite game on.
+      </div>
       {/* Cards container */}
       <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-4 gap-3 justify-items-stretch content-start pt-4">
         {/* Card Links */}
@@ -39,9 +50,9 @@ function createLinkCard(url, title, engine, status, network, frontendStatus, acc
   const determineClass = (url) => {
     
     if (url.includes('gno')) {
-        return 'bg-purple-500 hover:bg-gray-700';
+        return 'bg-purple-500 hover:bg-purple-500';
     } else {
-        return 'bg-purple-900 hover:bg-gray-700';
+        return 'bg-purple-900 hover:bg-purple-500';
     }
 };
 
@@ -53,7 +64,7 @@ const dynamicClasses = determineClass(url);
         {title}
       </h2>
       <p className="m-0 mb-1 max-w-[30ch] text-sm">
-        <b className="text-gray-300">Engine:</b> {engine}
+        <b className="text-gray-300">Virtual Machine:</b> {engine}
       </p>
       <p className="m-0 mb-1 max-w-[30ch] text-sm">
         <b className="text-gray-300">Backend:</b> {status}
