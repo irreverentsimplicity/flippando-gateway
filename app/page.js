@@ -19,8 +19,12 @@ export default function Home() {
       
       {/* Game mechanics */}
       <GameMechanics/>
+      <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-10 mb-10 pt-10">
+            Play Flippando
+      </div>
+      {createPlayCard("https://evm.flippando.xyz/flip", "On EVM", "Flippando is now live on a variety of chains. Click to play and select your Flipping Territory.")}
 
-      <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-20 pt-10">
+      <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-10 pt-10">
                 Live Dashboard
       </div>
       <div className="text-lg font-italic text-center text-shadow-sm mt-10 mb-10 mr-40 ml-40">
@@ -30,8 +34,10 @@ export default function Home() {
       {/* Cards container */}
       <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-4 gap-3 justify-items-stretch content-start pt-4">
         {/* Card Links */}
-        {createLinkCard("https://gno.flippando.xyz", "Gno", "GNOVM", "✅ deployed", "🧪 testnet", "✅ gno.flippando.xyz", "✅ public beta")}
-        {createLinkCard("#", "Saga", "EVM", "✅ deployed", "✅ mainnet", "🔒 not deployed", "🧪 internal testing")}
+        {createLinkCard("#", "Gno", "GNOVM", "✅ deployed", "🧪 testnet", "✅ gno.flippando.xyz", "🧪 internal testing")}
+        {createLinkCard("https://evm.flippando.xyz/flip", "Saga Main", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
+        {createLinkCard("https://evm.flippando.xyz/flip", "Saga Dev", "EVM", "✅ deployed", "✅ devnet", "✅ evm.flippando.xyz", "✅ public beta")}
+        {createLinkCard("https://evm.flippando.xyz/flip", "Base Sepolia", "EVM", "✅ deployed", "✅ testnet", "✅ evm.flippando.xyz", "✅ public beta")}
         {createLinkCard("#", "Evmos", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
         {createLinkCard("#", "Polygon", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
         {createLinkCard("#", "NEAR / Aurora", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
@@ -49,14 +55,14 @@ export default function Home() {
 function createLinkCard(url, title, engine, status, network, frontendStatus, access) {
   const determineClass = (url) => {
     
-    if (url.includes('gno')) {
+    if (access.includes('public beta')) {
         return 'bg-purple-500 hover:bg-purple-500';
     } else {
         return 'bg-purple-900 hover:bg-purple-500';
     }
-};
+  };
 
-const dynamicClasses = determineClass(url);
+  const dynamicClasses = determineClass(url);
 
   return (
     <a href={url} className={`group rounded-lg border ${dynamicClasses} border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
@@ -77,6 +83,23 @@ const dynamicClasses = determineClass(url);
       </p>
       <p className="m-0 mb-1 max-w-[30ch] text-sm">
         <b className="text-gray-300">Access:</b> <span role="img" aria-label="checkmark">{access}</span>
+      </p>
+    </a>
+  );
+}
+
+// Helper function to create link card
+function createPlayCard(url, title, copy) {
+
+  const dynamicClasses = 'bg-purple-900 hover:bg-purple-500';
+
+  return (
+    <a href={url} className={`group rounded-lg border ${dynamicClasses} border-transparent px-5 py-4 mt-6 mb-1 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
+      <h2 className="mb-4 text-4xl font-bold">
+        {title}
+      </h2>
+      <p className="m-0 mb-1 max-w-[30ch] text-2xl">
+        {copy}
       </p>
     </a>
   );
