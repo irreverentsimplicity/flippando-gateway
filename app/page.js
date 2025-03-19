@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import GameMechanics from "./components/GameMechanics";
+import Dashboard from "./components/Dashboard";
 import './globals.css';
 
 export default function Home() {
@@ -16,9 +17,10 @@ export default function Home() {
           Estoy flippando en colores
         </h3>
       </div>
-      
+      {/* Dashboard */}
+      <Dashboard />
       {/* Game mechanics */}
-      <GameMechanics/>
+      <GameMechanics />
       <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-10 mb-10 pt-10">
             Play Flippando
       </div>
