@@ -1,13 +1,12 @@
 'use client'
 import { Link } from '@chakra-ui/next-js'
 import Achievements from './Achievements';
-import { background } from '@chakra-ui/react';
 
 export default function Footer() {
 
     return (
         <div className="flex-1 pt-20 pb-5 mx-auto justify-items-center content-center text-center">
-            <div className="text-[2vw] font-semibold leading-none text-center text-shadow-lg mb-10">
+            <div className="text-[2vw] leading-none text-center text-shadow-lg mb-10">
                 Journey milestones
             </div>
             <Achievements />

@@ -67,7 +67,7 @@ export default function Dashboard() {
             
             {data.message === undefined &&
             <div>
-                <div className="text-[4vw] text-center mt-10">
+                <div className="text-[4vw] text-center mt-10 pt-10">
                     Live Dashboard
                 </div>
                 <div className="text-lg font-italic text-center text-shadow-sm mt-10 mb-10 mr-40 ml-40">

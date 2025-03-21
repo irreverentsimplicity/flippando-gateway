@@ -6,7 +6,7 @@ export default function GameMechanics() {
             <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 justify-items-stretch content-start pt-8">
             
             
-            <a href="#" className={`group rounded-lg border bg-purple-900 hover:bg-purple-900 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
+            <a href="#" className={`group rounded-lg border bg-purple-500 hover:bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
             <h2 className="mb-4 text-[3vw]">
             Flip
             </h2>
@@ -30,7 +30,7 @@ export default function GameMechanics() {
             </a>
             
 
-            <a href="#" className={`group rounded-lg border bg-purple-900 hover:bg-purple-900 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
+            <a href="#" className={`group rounded-lg border bg-purple-500 hover:bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
             <h2 className="mb-4 text-[3vw]">
             Create
             </h2>
@@ -52,7 +52,7 @@ export default function GameMechanics() {
             inside the board  is unlocked and sent to your wallet.
             </p>
             </a>
-            <a href="#" className={`group rounded-lg border bg-purple-900 hover:bg-purple-900 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
+            <a href="#" className={`group rounded-lg border bg-purple-500 hover:bg-purple-500 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
             <h2 className="mb-4 text-[3vw]">
             Trade
             </h2>
