@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GameMechanics from "./components/GameMechanics";
 import Dashboard from "./components/Dashboard";
@@ -5,30 +6,16 @@ import './globals.css';
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-between bg-gradient-to-tr from-purple-500 to-purple-900 text-white p-5">
+    
+    <main className="flex flex-1 flex-col bg-gradient-to-tr from-purple-500 to-purple-900 text-white p-5">
+    <Header />  
       {/* Title */}
       <div className="flex flex-1 items-start justify-center">
-        <h1 className="text-[8vw] font-semibold leading-none text-center text-shadow-lg pb-8 pt-4">
-          Flippando
-        </h1>
-      </div>
-      <div className="flex flex-1 items-start justify-center">
-        <h3 className="text-[1.5vw] font-italic leading-none text-center text-shadow-md pb-10 mb-10">
-          Estoy flippando en colores
-        </h3>
+        {createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic and Saga. Just choose your Flipping Territory.")}
       </div>
       {/* Dashboard */}
       <Dashboard />
-      {/* Game mechanics */}
-      <GameMechanics />
-      <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-10 mb-10 pt-10">
-            Play Flippando
-      </div>
-      {createPlayCard("https://evm.flippando.xyz/flip", "On EVM", "Flippando is now live on a variety of chains. Click to play and select your Flipping Territory.")}
-
-      <div className="text-[3vw] font-semibold leading-none text-center text-shadow-lg mt-10 pt-10">
-                Live Dashboard
-      </div>
+      
       <div className="text-lg font-italic text-center text-shadow-sm mt-10 mb-10 mr-40 ml-40">
             Flippando is a "user first, chain later" project. We built the same game, with the same features, on top of different VMs. And then deployed on a variety of blockchains.
             It's up to the user to decide which chain they want to play their favorite game on.
@@ -92,17 +79,29 @@ function createLinkCard(url, title, engine, status, network, frontendStatus, acc
 
 // Helper function to create link card
 function createPlayCard(url, title, copy) {
-
-  const dynamicClasses = 'bg-purple-900 hover:bg-purple-500';
+  const chains = [
+    { name: "Base", logo: "/assets/base-logo.png" },
+    { name: "Polygon", logo: "/assets/polygon-logo.png" },
+    { name: "Sonic", logo: "/assets/sonic-logo.png" },
+    { name: "Saga", logo: "/assets/saga-logo.png" }
+  ];
 
   return (
-    <a href={url} className={`group rounded-lg border ${dynamicClasses} border-transparent px-5 py-4 mt-6 mb-1 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
-      <h2 className="mb-4 text-4xl font-bold">
+    <a href={url} className="group rounded-lg border bg-purple-900 hover:bg-purple-500 border-transparent px-5 py-4 mt-6 mb-7 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+      <h2 className="text-center mb-4 text-5xl font-bold">
         {title}
       </h2>
-      <p className="m-0 mb-1 max-w-[30ch] text-2xl">
+      <p className="text-center mb-4 text-sm">
         {copy}
       </p>
+      <div className="flex justify-center gap-6 mt-4">
+        {chains.map((chain) => (
+          <div key={chain.name} className="flex flex-col items-center">
+            <img src={chain.logo} alt={chain.name} className="w-10 h-10 rounded-full" />
+            <span className="text-xs mt-2">{chain.name}</span>
+          </div>
+        ))}
+      </div>
     </a>
   );
 }

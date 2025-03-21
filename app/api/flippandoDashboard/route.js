@@ -48,14 +48,14 @@ async function fetchChainData(chain, provider) {
 
         const [totalLockedFLIPND, totalUnlockedFLIPND, totalFLIPBB, totalFLIPAG] = await Promise.all([
             flipndContract.getTotalLockedSupply(),
-            flipndContract.getTotalUnlockedSupply(),
+            flipndContract.totalSupply(),
             flipbbContract.totalSupply(),
             flipagContract.totalSupply()
         ]);
 
         return {
-            totalLockedFLIPND: totalLockedFLIPND.toString(),
-            totalUnlockedFLIPND: totalUnlockedFLIPND.toString(),
+            totalLockedFLIPND: (Number(totalLockedFLIPND) / 1e18).toFixed(2),
+            totalUnlockedFLIPND: (Number(totalUnlockedFLIPND) / 1e18).toFixed(2),
             totalFLIPBB: totalFLIPBB.toString(),
             totalFLIPAG: totalFLIPAG.toString(),
             flipbbHolders: 5, // Placeholder values
@@ -72,8 +72,9 @@ async function fetchChainData(chain, provider) {
 async function fetchData() {
     const results = await Promise.all(
         Object.entries(providers).map(async ([chain, provider]) => {
+            const formattedChain = chain.charAt(0).toUpperCase() + chain.slice(1);
             const data = await fetchChainData(chain, provider);
-            return data ? [chain, data] : null;
+            return data ? [formattedChain, data] : null;
         })
     );
 
