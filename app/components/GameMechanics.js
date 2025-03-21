@@ -3,11 +3,14 @@
 export default function GameMechanics() {
 
     return (        
-            <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-3 gap-3 justify-items-stretch content-start pt-4">
+            <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 justify-items-stretch content-start pt-8">
+            
+            
             <a href="#" className={`group rounded-lg border bg-purple-900 hover:bg-purple-900 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
-            <h2 className="mb-4 text-4xl font-bold mb-8">
+            <h2 className="mb-4 text-[3vw]">
             Flip
             </h2>
+            <hr />
             <div style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -25,10 +28,13 @@ export default function GameMechanics() {
             Mint the solved board as an on-chain NFT.
             </p>
             </a>
+            
+
             <a href="#" className={`group rounded-lg border bg-purple-900 hover:bg-purple-900 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
-            <h2 className="mb-4 text-4xl font-bold mb-8">
+            <h2 className="mb-4 text-[3vw]">
             Create
             </h2>
+            <hr />
             <div style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -42,14 +48,15 @@ export default function GameMechanics() {
             </div>
             <p className="mt-8">
             Drag and drop other boards and create stunning pixel-based art. 
-            When one of your boards is used by someone else, the fungible FLIP token locked 
+            When one of your boards is used by someone else, the fungible $FLIPND token locked 
             inside the board  is unlocked and sent to your wallet.
             </p>
             </a>
             <a href="#" className={`group rounded-lg border bg-purple-900 hover:bg-purple-900 border-transparent px-5 py-4 mx-2 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30`}>
-            <h2 className="mb-4 text-4xl font-bold mb-8">
+            <h2 className="mb-4 text-[3vw]">
             Trade
             </h2>
+            <hr />
             <div style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -63,7 +70,7 @@ export default function GameMechanics() {
             </div>
             <p className="mt-8">
             Find gems in the marketplace and collect them all. 
-            Put your own art on sale or stack up on those fungible FLIP tokens!
+            Put your own art on sale or stack up on those fungible $FLIPND tokens!
             </p>
             </a>
             </div>

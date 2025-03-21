@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import GameMechanics from "./GameMechanics";
+import { AnimatedFLIPNDStats } from "./AnimatedFLIPNDStats"
 
 export default function Dashboard() {
     const [data, setData] = useState(null);
@@ -55,80 +56,59 @@ export default function Dashboard() {
 
     return (
         <div className="p-4 overflow-x-auto mb-5 mt-5">
-            <div className="text-[2vw] mt-0 text-center font-normal">
-                {totalUnlockedFLIPND} liquid $FLIPND rewarded across chains
-            </div>
-            <div className="text-[2vw] mt-1 text-center font-normal mb-1">
-                {totalLockedFLIPND} locked $FLIPND across chains
-            </div>
-            <div className="text-[2vw] mt-1 text-center font-normal mb-20">
-                {totalFLIPAG} artworks minted across chains
-            </div>
+            {/* FLIPND stats */}
+            <AnimatedFLIPNDStats 
+                totalUnlockedFLIPND={totalUnlockedFLIPND} 
+                totalLockedFLIPND={totalLockedFLIPND}
+                totalFLIPAG={totalFLIPAG} />
 
             {/* Game mechanics */}
             <GameMechanics />
             
-            <div className="flex flex-wrap justify-center pt-8 gap-8">
-                <div>
-                    <h3 className="text-center font-normal">Locked $FLIPND & basic flips</h3>
-                    <PieChart width={300} height={300}>
-                        <Pie 
-                            data={lockedFLIPNDData} 
-                            dataKey="value" 
-                            paddingAngle={2} 
-                            innerRadius={60} 
-                            outerRadius={75} 
-                            fill="#8884d8">
-                            {lockedFLIPNDData.map((entry, index) => (
-                                <Cell key={index} fill={entry.color} />
-                            ))}
-                        </Pie>
-                        <Pie 
-                            data={flipbbData} 
-                            dataKey="value" 
-                            paddingAngle={2} 
-                            innerRadius={80} 
-                            outerRadius={100} 
-                            fill="#82ca9d">
-                            {flipbbData.map((entry, index) => (
-                                <Cell key={index} fill={entry.color} />
-                            ))}
-                        </Pie>
-                        <Tooltip />
-                    </PieChart>
+            {data.message === undefined &&
+            <div>
+                <div className="text-[4vw] text-center mt-10">
+                    Live Dashboard
                 </div>
-                <div>
-                    <h3 className="text-center font-normal">Liquid $FLIPND</h3>
-                    <PieChart width={300} height={300}>
-                        <Pie data={unlockedFLIPNDData} 
-                            dataKey="value" 
-                            paddingAngle={2} 
-                            innerRadius={60} 
-                            outerRadius={100} fill="#8884d8">
-                            {unlockedFLIPNDData.map((entry, index) => (
-                                <Cell key={index} fill={entry.color} />
-                            ))}
-                        </Pie>
-                        <Tooltip />
-                    </PieChart>
+                <div className="text-lg font-italic text-center text-shadow-sm mt-10 mb-10 mr-40 ml-40">
+                        Flippando is a "user first, chain later" project. We built the same game, with the same features, on top of different VMs. And then deployed on a variety of blockchains.
+                        It's up to the user to decide which chain they want to play their favorite game on.
                 </div>
-                <div>
-                    <h3 className="text-center font-normal">Art created</h3>
-                    <PieChart width={300} height={300}>
-                        <Pie 
-                            data={flipagData} 
-                            dataKey="value" 
-                            paddingAngle={2} 
-                            innerRadius={60} 
-                            outerRadius={100} fill="#8884d8">
-                            {flipagData.map((entry, index) => (
-                                <Cell key={index} fill={entry.color} />
+                <div className="flex flex-wrap justify-center pt-8 gap-8">
+                    {[ 
+                        { title: "Locked $FLIPND", data: lockedFLIPNDData, secondaryData: flipbbData },
+                        { title: "Liquid $FLIPND", data: unlockedFLIPNDData },
+                        { title: "Artworks", data: flipagData }
+                    ].map(({ title, data, secondaryData }, index) => (
+                        <div key={index} className="flex flex-col items-center w-[300px]">
+                        <h3 className="text-center text-[1.2vw]">{title}</h3>
+                        <PieChart width={300} height={300}>
+                            <Pie data={data} dataKey="value" paddingAngle={2} innerRadius={60} outerRadius={95} fill="#8884d8">
+                            {data.map((entry, i) => (
+                                <Cell key={i} fill={entry.color} />
                             ))}
-                        </Pie>
-                        <Tooltip />
-                    </PieChart>
+                            </Pie>
+                            <Tooltip />
+                        </PieChart>
+                        <hr className="w-full border-gray-300 mt-4" />
+                        <div className="mt-4 w-full">
+                            {data.filter(entry => entry.value > 0)
+                            .sort((a, b) => b.value - a.value)
+                            .map((entry) => (
+                                <div key={entry.name} className="flex items-center gap-3 mb-2">
+                                <img src={`/assets/${entry.name.toLowerCase()}-logo.png`} alt={entry.name} className="w-6 h-6 rounded-full" />
+                                <span className="text-sm">{entry.name}: {entry.value} {title.includes("FLIPND") ? "$FLIPND" : "items"}</span>
+                                </div>
+                            ))}
+                        </div>
+                        </div>
+                    ))}
                 </div>
             </div>
+            }
+
+
         </div>
+            
     );
 }

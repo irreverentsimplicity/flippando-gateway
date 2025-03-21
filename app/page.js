@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import GameMechanics from "./components/GameMechanics";
 import Dashboard from "./components/Dashboard";
 import './globals.css';
 
@@ -16,10 +15,6 @@ export default function Home() {
       {/* Dashboard */}
       <Dashboard />
       
-      <div className="text-lg font-italic text-center text-shadow-sm mt-10 mb-10 mr-40 ml-40">
-            Flippando is a "user first, chain later" project. We built the same game, with the same features, on top of different VMs. And then deployed on a variety of blockchains.
-            It's up to the user to decide which chain they want to play their favorite game on.
-      </div>
       {/* Cards container */}
       <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-4 gap-3 justify-items-stretch content-start pt-4">
         {/* Card Links */}
@@ -88,7 +83,7 @@ function createPlayCard(url, title, copy) {
 
   return (
     <a href={url} className="group rounded-lg border bg-purple-900 hover:bg-purple-500 border-transparent px-5 py-4 mt-6 mb-7 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-      <h2 className="text-center mb-4 text-5xl font-bold">
+      <h2 className="text-center mb-4 p-5 text-5xl">
         {title}
       </h2>
       <p className="text-center mb-4 text-sm">
