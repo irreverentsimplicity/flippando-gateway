@@ -76,10 +76,10 @@ export default function Dashboard() {
                 </div>
                 <div className="flex flex-wrap justify-center pt-8 gap-8">
                     {[ 
-                        { title: "Locked $FLIPND", data: lockedFLIPNDData, secondaryData: flipbbData },
+                        { title: "Locked $FLIPND", data: lockedFLIPNDData },
                         { title: "Liquid $FLIPND", data: unlockedFLIPNDData },
                         { title: "Artworks", data: flipagData }
-                    ].map(({ title, data, secondaryData }, index) => (
+                    ].map(({ title, data }, index) => (
                         <div key={index} className="flex flex-col items-center w-[300px]">
                         <h3 className="text-center text-[1.2vw]">{title}</h3>
                         <PieChart width={300} height={300}>
@@ -97,7 +97,22 @@ export default function Dashboard() {
                             .map((entry) => (
                                 <div key={entry.name} className="flex items-center gap-3 mb-2">
                                 <img src={`/assets/${entry.name.toLowerCase()}-logo.png`} alt={entry.name} className="w-6 h-6 rounded-full" />
-                                <span className="text-sm">{entry.name}: {entry.value} {title.includes("FLIPND") ? "$FLIPND" : "items"}</span>
+                                <div className="text-sm">
+                                    {entry.name}: {entry.value}{" "}
+                                    {title.includes("Locked $FLIPND") ? (
+                                        <>
+                                        <b><u>locked</u></b> $FLIPND
+                                        </>
+                                    ) : title.includes("Liquid $FLIPND") ? (
+                                        <>
+                                        <b><u>liquid</u></b> $FLIPND
+                                        </>
+                                    ) : (
+                                        <>
+                                        <u>unique art NFTs</u>
+                                        </>
+                                    )}
+                                    </div>
                                 </div>
                             ))}
                         </div>

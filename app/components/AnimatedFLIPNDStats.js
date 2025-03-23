@@ -37,22 +37,36 @@ export function AnimatedFLIPNDStats({ totalUnlockedFLIPND, totalLockedFLIPND, to
   }
 
   return (
-    <div className="text-center">
-      {totalUnlockedFLIPND > 0 && (
-        <div className="text-[2vw] mt-0 font-normal">
-          {Math.floor(animatedValues.unlocked)} liquid $FLIPND rewarded across chains
+    <div className="flex justify-center w-full">
+        <div className="text-start max-w-xxl">
+        {totalUnlockedFLIPND > 0 && (
+            <div className="text-[2vw] mt-0 font-normal mt-2">
+            <span className="text-[2.8vw] text-white font-bold bg-purple-500 rounded-md px-3 py-2 mr-2">{Math.floor(animatedValues.unlocked)}</span>{" "}
+                <b>
+                <u>liquid $FLIPND</u>
+                </b>{" "}
+                rewarded across chains
+            </div>
+        )}
+        {totalLockedFLIPND > 0 && (
+            <div className="text-[2vw] mt-1 font-normal mt-2">
+                <span className="text-[2.8vw] text-white font-bold bg-purple-500 rounded-md px-3 py-2 mr-2">{Math.floor(animatedValues.locked)}</span>{" "}
+                <b>
+                <u>locked $FLIPND</u>
+                </b>{" "}
+                available across chains
+            </div>
+        )}
+        {totalFLIPAG > 0 && (
+            <div className="text-[2vw] mt-1 font-normal mb-20 mt-2">
+            <span className="text-[2.8vw] text-white font-bold bg-purple-500 rounded-md px-3 py-2 mr-2">{Math.floor(animatedValues.artworks)}</span>{" "}
+                <b>
+                <u>unique art NFTs</u>
+                </b>{" "}
+                minted across chains
+            </div>
+        )}
         </div>
-      )}
-      {totalLockedFLIPND > 0 && (
-        <div className="text-[2vw] mt-1 font-normal">
-          {Math.floor(animatedValues.locked)} locked $FLIPND across chains
-        </div>
-      )}
-      {totalFLIPAG > 0 && (
-        <div className="text-[2vw] mt-1 font-normal mb-20">
-          {Math.floor(animatedValues.artworks)} artworks minted across chains
-        </div>
-      )}
     </div>
   );
 }
