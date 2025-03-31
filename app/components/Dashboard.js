@@ -28,7 +28,7 @@ export default function Dashboard() {
     const totalFLIPBB = chains.reduce((sum, chain) => sum + parseFloat(data[chain].totalFLIPBB || 0), 0);
     const totalFLIPAG = chains.reduce((sum, chain) => sum + parseFloat(data[chain].totalFLIPAG || 0), 0);
 
-    const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"];
+    const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"];
 
     const lockedFLIPNDData = chains.map((chain, index) => ({
         name: chain,
