@@ -9,7 +9,7 @@ import FLIPPANDO_BUNDLER_CONTRACT_ABI from "../../components/abis/FlippandoBundl
 import FLIP_CONTRACT_ABI from "../../components/abis/FLIPND.json";
 
 const BASE_RPC_URL="https://mainnet.base.org"
-const POLYGON_RPC_URL="https://1rpc.io/matic"
+const POLYGON_RPC_URL="https://polygon.llamarpc.com"
 const SONIC_RPC_URL="https://rpc.soniclabs.com"
 const SAGA_RPC_URL="https://flippandomainnet-2737273595554000-1.jsonrpc.sagarpc.io"
 const BERACHAIN_RPC_URL ="https://rpc.berachain.com"
