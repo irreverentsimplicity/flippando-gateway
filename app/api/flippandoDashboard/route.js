@@ -69,6 +69,19 @@ const providers = Object.fromEntries(
     Object.entries(RPC_URLS).map(([chain, url]) => [chain, new ethers.JsonRpcProvider(url)])
 );
 
+async function fetchWithRetry(contract, method, retries = 3, delay = 1000) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            return await contract[method]();
+        } catch (error) {
+            console.warn(`⚠️ RPC call failed (${method}) - Retry ${i + 1}/${retries}:`, error);
+            await new Promise(res => setTimeout(res, delay)); // Wait before retrying
+        }
+    }
+    throw new Error(`❌ Failed to fetch ${method} after ${retries} retries.`);
+}
+
+
 async function fetchChainData(chain, provider) {
     try {
         const flipndContract = new ethers.Contract(CONTRACTS.FLIPND[chain], FLIP_CONTRACT_ABI.abi, provider);
@@ -76,10 +89,10 @@ async function fetchChainData(chain, provider) {
         const flipagContract = new ethers.Contract(CONTRACTS.FLIPAG[chain], FLIPPANDO_BUNDLER_CONTRACT_ABI.abi, provider);
 
         const [totalLockedFLIPND, totalUnlockedFLIPND, totalFLIPBB, totalFLIPAG] = await Promise.all([
-            flipndContract.getTotalLockedSupply(),
-            flipndContract.totalSupply(),
-            flipbbContract.totalSupply(),
-            flipagContract.totalSupply()
+            fetchWithRetry(flipndContract, "getTotalLockedSupply"),
+            fetchWithRetry(flipndContract, "totalSupply"),
+            fetchWithRetry(flipbbContract, "totalSupply"),
+            fetchWithRetry(flipagContract, "totalSupply"),
         ]);
 
         return {
@@ -118,6 +131,11 @@ fetchData();
 
 // Next.js API route handler
 export async function GET() {
-    const data = cache.get("dashboardData");
+    let data = cache.get("dashboardData");
+    // If cache is empty or expired, fetch new data
+    if (!data) {
+        console.log("⏳ Cache expired. Fetching new data...");
+        data = await fetchData();
+    }
     return Response.json(data || { message: "Data not available yet. Try again later." });
 }
