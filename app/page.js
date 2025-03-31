@@ -11,7 +11,7 @@ export default function Home() {
     <Header />  
       {/* Title */}
       <div className="flex flex-1 items-start justify-center">
-        {createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic and Saga. Just choose your Flipping Territory.")}
+        {createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic, Saga and Berachain.",  "Just choose your Flipping Territory.")}
       </div>
       {/* Dashboard */}
       <Dashboard />
@@ -34,6 +34,7 @@ export default function Home() {
           {createLinkCard("https://evm.flippando.xyz/flip", "Saga Mainnet", "saga-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Polygon", "polygon-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Sonic", "sonic-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
+          {createLinkCard("https://evm.flippando.xyz/flip", "Berachain", "berachain-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
         </div>
         
         {/* Right Column with 2-column grid inside */}
@@ -47,6 +48,7 @@ export default function Home() {
           {createLinkCard("https://evm.flippando.xyz/flip", "Saga Devnet", "saga-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Polygon Amoy", "polygon-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Sonic Blaze", "sonic-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
+          {createLinkCard("https://evm.flippando.xyz/flip", "Berachain Bepolia", "berachain-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("#", "Gno", "", "GNOVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}  
           {createLinkCard("#", "Arbitrum", "", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
           {createLinkCard("#", "Optimism", "", "EVM", "✅ deployed", "🧪 testnet", "🔒 not deployed", "🧪 internal testing")}
@@ -103,12 +105,13 @@ function createLinkCard(url, title, logo, engine, status, network, frontendStatu
 }
 
 // Helper function to create link card
-function createPlayCard(url, title, copy) {
+function createPlayCard(url, title, copy1, copy2) {
   const chains = [
     { name: "Base", logo: "/assets/base-logo.png" },
     { name: "Polygon", logo: "/assets/polygon-logo.png" },
     { name: "Sonic", logo: "/assets/sonic-logo.png" },
-    { name: "Saga", logo: "/assets/saga-logo.png" }
+    { name: "Saga", logo: "/assets/saga-logo.png" },
+    { name: "Berachain", logo: "/assets/berachain-logo.png" },
   ];
 
   return (
@@ -116,8 +119,11 @@ function createPlayCard(url, title, copy) {
       <h2 className="text-center mb-4 p-5 text-5xl">
         {title}
       </h2>
-      <p className="text-center mb-4 text-sm">
-        {copy}
+      <p className="text-center mb-2 text-md">
+        {copy1}
+      </p>
+      <p className="text-center mb-6 text-sm">
+        {copy2}
       </p>
       <div className="flex justify-center gap-6 mt-4">
         {chains.map((chain) => (
