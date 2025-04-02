@@ -5,17 +5,25 @@ import { VStack, HStack } from "@chakra-ui/react";
 import './globals.css';
 
 export default function Home() {
+  const maintenanceMode = 1;
+
   return (
     
     <main className="flex flex-1 flex-col bg-gradient-to-tr from-purple-500 to-purple-900 text-white p-5">
     <Header />  
       {/* Title */}
       <div className="flex flex-1 items-start justify-center">
-        {createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic, Saga and Berachain.",  "Just choose your Flipping Territory.")}
+        {maintenanceMode == 0 &&
+          createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic, Saga and Berachain.",  "Just choose your Flipping Territory.")
+        }
+        {maintenanceMode == 1 &&
+          createMaintenanceCard("#", "Flippando is in maintenance", "We're tidying up some stuff.",  "It shouldn't take long, flip back soon.")
+        }
       </div>
       {/* Dashboard */}
+      {maintenanceMode == 0 &&
       <Dashboard />
-      
+      }
       {/* Cards container */}
       <div className="text-[4vw] text-center mt-10 pt-10">
           Flipping Territories
@@ -106,6 +114,39 @@ function createLinkCard(url, title, logo, engine, status, network, frontendStatu
 
 // Helper function to create link card
 function createPlayCard(url, title, copy1, copy2) {
+  const chains = [
+    { name: "Base", logo: "/assets/base-logo.png" },
+    { name: "Polygon", logo: "/assets/polygon-logo.png" },
+    { name: "Sonic", logo: "/assets/sonic-logo.png" },
+    { name: "Saga", logo: "/assets/saga-logo.png" },
+    { name: "Berachain", logo: "/assets/berachain-logo.png" },
+  ];
+
+  return (
+    <a href={url} className="group rounded-lg border bg-purple-500 hover:bg-purple-800 border-transparent px-5 py-4 mt-6 mb-7 transition-colors hover:border-gray-300 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+      <h2 className="text-center mb-4 p-5 text-5xl">
+        {title}
+      </h2>
+      <p className="text-center mb-2 text-md">
+        {copy1}
+      </p>
+      <p className="text-center mb-6 text-sm">
+        {copy2}
+      </p>
+      <div className="flex justify-center gap-6 mt-4">
+        {chains.map((chain) => (
+          <div key={chain.name} className="flex flex-col items-center">
+            <img src={chain.logo} alt={chain.name} className="w-10 h-10 rounded-full" />
+            <span className="text-xs mt-2">{chain.name}</span>
+          </div>
+        ))}
+      </div>
+    </a>
+  );
+}
+
+// Helper function to create a maintenance card
+function createMaintenanceCard(url, title, copy1, copy2) {
   const chains = [
     { name: "Base", logo: "/assets/base-logo.png" },
     { name: "Polygon", logo: "/assets/polygon-logo.png" },
