@@ -5,7 +5,7 @@ import { VStack, HStack } from "@chakra-ui/react";
 import './globals.css';
 
 export default function Home() {
-  const maintenanceMode = 1;
+  const maintenanceMode = 0;
 
   return (
     
