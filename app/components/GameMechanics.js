@@ -69,8 +69,8 @@ export default function GameMechanics() {
                 }}/>
             </div>
             <p className="mt-8">
-            Find gems in the marketplace and collect them all. 
-            Put your own art on sale or stack up on those fungible $FLIPND tokens!
+            Put your own art on sale and stack up on those fungible $FLIPND tokens!
+            They are holding voting power, so you can shape the future of Flippando via the DAO.
             </p>
             </a>
             </div>

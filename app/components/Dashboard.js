@@ -1,11 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
+import { Token, Pair, TokenAmount } from "@uniswap/sdk"; // but will still assume v5 ethers signatures
+import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'; // install if missing
+import { ethers } from 'ethers'; 
+import { getFlipndPriceInUSDC } from "../util/getTokenPricePolygon";
 import GameMechanics from "./GameMechanics";
 import { AnimatedFLIPNDStats } from "./AnimatedFLIPNDStats"
 
 export default function Dashboard() {
     const [data, setData] = useState(null);
+    const ChainId = {
+        MATIC: 137
+      };
 
     useEffect(() => {
         async function fetchData() {
@@ -15,9 +22,19 @@ export default function Dashboard() {
             setData(result);
         }
         fetchData();
+        getFLIPNDPriceOnPolygon();
         const interval = setInterval(fetchData, 300000); // Refresh every 5 min
         return () => clearInterval(interval);
     }, []);
+
+    
+    const getFLIPNDPriceOnPolygon = async () => {
+        const price = await getFlipndPriceInUSDC();
+        console.log(`FLIPND price in USDC: ${price}`);
+    
+    
+    }
+    
 
     if (!data) return <div>Loading...</div>;
 
