@@ -22,7 +22,7 @@ export default function Dashboard() {
             setData(result);
         }
         fetchData();
-        getFLIPNDPriceOnPolygon();
+        //getFLIPNDPriceOnPolygon();
         const interval = setInterval(fetchData, 300000); // Refresh every 5 min
         return () => clearInterval(interval);
     }, []);
