@@ -69,8 +69,8 @@ export default function GameMechanics() {
                 }}/>
             </div>
             <p className="mt-8">
-            Put your own art on sale and stack up on those fungible $FLIPND tokens!
-            They are holding voting power, so you can shape the future of Flippando via the DAO.
+            Trade your art and stack up on $FLIPND tokens! No airdrop, no premine, just organic minting via Proof of Atttention.
+            $FLIPND is also holding voting power, so you can shape the future of Flippando via the DAO.
             </p>
             </a>
             </div>

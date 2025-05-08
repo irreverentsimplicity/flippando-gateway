@@ -1,15 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
-import { Token, Pair, TokenAmount } from "@uniswap/sdk"; // but will still assume v5 ethers signatures
-import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'; // install if missing
-import { ethers } from 'ethers'; 
-import { getFlipndPriceInUSDC } from "../util/getTokenPricePolygon";
 import GameMechanics from "./GameMechanics";
 import { AnimatedFLIPNDStats } from "./AnimatedFLIPNDStats"
 
+
 export default function Dashboard() {
     const [data, setData] = useState(null);
+    const [price, setPrice] = useState(null);
     const ChainId = {
         MATIC: 137
       };
@@ -22,16 +20,23 @@ export default function Dashboard() {
             setData(result);
         }
         fetchData();
-        //getFLIPNDPriceOnPolygon();
+        getFLIPNDPriceOnPolygon();
         const interval = setInterval(fetchData, 300000); // Refresh every 5 min
         return () => clearInterval(interval);
     }, []);
 
     
     const getFLIPNDPriceOnPolygon = async () => {
-        const price = await getFlipndPriceInUSDC();
-        console.log(`FLIPND price in USDC: ${price}`);
-    
+        const res = await fetch("/api/flipnd-price");
+        if (!res.ok) {
+        const error = await res.json();
+        console.error("API failed:", error);
+        setPrice(null);
+        } else {
+        const { price } = await res.json();
+        setPrice(price);
+        console.log("FLIPND price in USDC:", price);
+        }
     
     }
     
@@ -73,6 +78,12 @@ export default function Dashboard() {
 
     return (
         <div className="p-4 overflow-x-auto mb-5 mt-5">
+            {price !== null &&
+            <p className="p-4 mb-5 mt-3 text-center font-bold text-3xl overflow-x-auto">
+                1 $FLIPND = {price}
+            </p>
+            }
+
             {/* FLIPND stats */}
             <AnimatedFLIPNDStats 
                 totalUnlockedFLIPND={totalUnlockedFLIPND} 
