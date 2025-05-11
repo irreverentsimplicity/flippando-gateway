@@ -27,6 +27,10 @@ export default function Dashboard() {
 
     
     const getFLIPNDPriceOnPolygon = async () => {
+        /**
+         * revisit after new liquidity pool
+         */
+        /*
         const res = await fetch("/api/flipnd-price");
         if (!res.ok) {
         const error = await res.json();
@@ -36,7 +40,7 @@ export default function Dashboard() {
         const { price } = await res.json();
         setPrice(price);
         console.log("FLIPND price in USDC:", price);
-        }
+        }*/
     
     }
     
