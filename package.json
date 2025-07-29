@@ -6,7 +6,8 @@
     "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "refresh-cache": "node scripts/refresh-cache.js"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",

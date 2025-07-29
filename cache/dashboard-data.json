@@ -1,0 +1,56 @@
+{
+  "data": {
+    "Base": {
+      "totalLockedFLIPND": "30.00",
+      "totalUnlockedFLIPND": "17.28",
+      "totalFLIPBB": "27",
+      "totalFLIPAG": "4",
+      "flipbbHolders": 5,
+      "flipagHolders": 5,
+      "totalTransactions": 5,
+      "avgMovesFLIPBB": 5
+    },
+    "Polygon": {
+      "totalLockedFLIPND": "30.00",
+      "totalUnlockedFLIPND": "17.28",
+      "totalFLIPBB": "30",
+      "totalFLIPAG": "4",
+      "flipbbHolders": 5,
+      "flipagHolders": 5,
+      "totalTransactions": 5,
+      "avgMovesFLIPBB": 5
+    },
+    "Sonic": {
+      "totalLockedFLIPND": "6.00",
+      "totalUnlockedFLIPND": "8.64",
+      "totalFLIPBB": "6",
+      "totalFLIPAG": "2",
+      "flipbbHolders": 5,
+      "flipagHolders": 5,
+      "totalTransactions": 5,
+      "avgMovesFLIPBB": 5
+    },
+    "Saga": {
+      "totalLockedFLIPND": "439.00",
+      "totalUnlockedFLIPND": "111.24",
+      "totalFLIPBB": "316",
+      "totalFLIPAG": "5",
+      "flipbbHolders": 5,
+      "flipagHolders": 5,
+      "totalTransactions": 5,
+      "avgMovesFLIPBB": 5
+    },
+    "Berachain": {
+      "totalLockedFLIPND": "0.00",
+      "totalUnlockedFLIPND": "0.00",
+      "totalFLIPBB": "0",
+      "totalFLIPAG": "0",
+      "flipbbHolders": 5,
+      "flipagHolders": 5,
+      "totalTransactions": 5,
+      "avgMovesFLIPBB": 5
+    }
+  },
+  "timestamp": 1753770051340,
+  "lastUpdated": "2025-07-29T06:20:51.340Z"
+}
