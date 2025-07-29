@@ -14,7 +14,7 @@ export default function Home() {
       {/* Title */}
       <div className="flex flex-1 items-start justify-center">
         {maintenanceMode == 0 &&
-          createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic, Saga and Berachain.",  "Just choose your Flipping Territory.")
+          createPlayCard("https://evm.flippando.xyz/flip", "Play Flippando", "On Base, Polygon, Sonic, Flipchain and Berachain.",  "Just choose your Flipping Territory.")
         }
         {maintenanceMode == 1 &&
           createMaintenanceCard("#", "Flippando is in maintenance", "We're tidying up some stuff.",  "It shouldn't take long, flip back soon.")
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <hr className="col-span-2 pt-5"/>
           {createLinkCard("https://evm.flippando.xyz/flip", "Base", "base-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
-          {createLinkCard("https://evm.flippando.xyz/flip", "Saga Mainnet", "saga-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
+          {createLinkCard("https://evm.flippando.xyz/flip", "Flipchain Main", "saga-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Polygon", "polygon-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Sonic", "sonic-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Berachain", "berachain-logo.png", "EVM", "✅ deployed", "✅ mainnet", "✅ evm.flippando.xyz", "✅ public beta")}
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
         <hr className="col-span-2 pt-5"/>
           {createLinkCard("https://evm.flippando.xyz/flip", "Base Sepolia", "base-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
-          {createLinkCard("https://evm.flippando.xyz/flip", "Saga Devnet", "saga-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
+          {createLinkCard("https://evm.flippando.xyz/flip", "Flipchain Dev", "saga-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Polygon Amoy", "polygon-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Sonic Blaze", "sonic-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
           {createLinkCard("https://evm.flippando.xyz/flip", "Berachain Bepolia", "berachain-logo.png", "EVM", "✅ deployed", "🧪 testnet", "✅ evm.flippando.xyz", "✅ public beta")}
@@ -118,7 +118,7 @@ function createPlayCard(url, title, copy1, copy2) {
     { name: "Base", logo: "/assets/base-logo.png" },
     { name: "Polygon", logo: "/assets/polygon-logo.png" },
     { name: "Sonic", logo: "/assets/sonic-logo.png" },
-    { name: "Saga", logo: "/assets/saga-logo.png" },
+    { name: "Flipchain", logo: "/assets/saga-logo.png" },
     { name: "Berachain", logo: "/assets/berachain-logo.png" },
   ];
 
@@ -151,7 +151,7 @@ function createMaintenanceCard(url, title, copy1, copy2) {
     { name: "Base", logo: "/assets/base-logo.png" },
     { name: "Polygon", logo: "/assets/polygon-logo.png" },
     { name: "Sonic", logo: "/assets/sonic-logo.png" },
-    { name: "Saga", logo: "/assets/saga-logo.png" },
+    { name: "Flipchain", logo: "/assets/saga-logo.png" },
     { name: "Berachain", logo: "/assets/berachain-logo.png" },
   ];
 
