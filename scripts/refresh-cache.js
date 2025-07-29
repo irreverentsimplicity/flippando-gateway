@@ -66,7 +66,11 @@ const CONTRACTS = {
 };
 
 const providers = Object.fromEntries(
-    Object.entries(RPC_URLS).map(([chain, url]) => [chain, new ethers.JsonRpcProvider(url)])
+    Object.entries(RPC_URLS).map(([chain, url]) => {
+        const provider = new ethers.JsonRpcProvider(url);
+        provider._timeout = 10000; // 10 second timeout
+        return [chain, provider];
+    })
 );
 
 const CACHE_FILE = path.join(__dirname, "../cache/dashboard-data.json");
@@ -84,17 +88,26 @@ async function fetchWithRetry(contract, method, retries = 3, delay = 1000) {
 }
 
 async function fetchChainData(chain, provider) {
+    const timeout = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error(`Timeout after 15 seconds for ${chain}`)), 15000)
+    );
+    
     try {
         console.log(`📡 Fetching data for ${chain}...`);
         const flipndContract = new ethers.Contract(CONTRACTS.FLIPND[chain], FLIP_CONTRACT_ABI.abi, provider);
         const flipbbContract = new ethers.Contract(CONTRACTS.FLIPBB[chain], FLIPPANDO_CONTRACT_ABI.abi, provider);
         const flipagContract = new ethers.Contract(CONTRACTS.FLIPAG[chain], FLIPPANDO_BUNDLER_CONTRACT_ABI.abi, provider);
 
-        const [totalLockedFLIPND, totalUnlockedFLIPND, totalFLIPBB, totalFLIPAG] = await Promise.all([
+        const dataPromise = Promise.all([
             fetchWithRetry(flipndContract, "getTotalLockedSupply"),
             fetchWithRetry(flipndContract, "totalSupply"),
             fetchWithRetry(flipbbContract, "totalSupply"),
             fetchWithRetry(flipagContract, "totalSupply"),
+        ]);
+
+        const [totalLockedFLIPND, totalUnlockedFLIPND, totalFLIPBB, totalFLIPAG] = await Promise.race([
+            dataPromise,
+            timeout
         ]);
 
         return {
